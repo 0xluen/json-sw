@@ -22,4 +22,9 @@
       <Filter>Kaynak Dosyalar</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="config.txt">
+      <Filter>Kaynak Dosyalar</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

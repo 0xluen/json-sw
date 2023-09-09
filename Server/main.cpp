@@ -1,12 +1,42 @@
 #include <iostream>
 #include <fstream>
 #include <boost/asio.hpp>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <map>
 
 using namespace std;
 using namespace boost::asio;
 
 
 int main() {
+    std::ifstream configFile("config.txt");
+    std::map<std::string, std::string> configData;
+
+    if (configFile.is_open()) {
+        std::string line;
+        while (std::getline(configFile, line)) {
+            size_t delimiterPos = line.find('=');
+            if (delimiterPos != std::string::npos) {
+                std::string key = line.substr(0, delimiterPos);
+                std::string value = line.substr(delimiterPos + 1);
+                configData[key] = value;
+            }
+        }
+        configFile.close();
+    }
+    else {
+        std::cerr << "Config file not found or unable to open." << std::endl;
+        return 1;
+    }
+
+    std::cout << "DB_HOST: " << configData["DB_HOST"] << std::endl;
+    std::cout << "DB_USER: " << configData["DB_USER"] << std::endl;
+    std::cout << "DB_PASSWORD: " << configData["DB_PASSWORD"] << std::endl;
+    std::cout << "DB_NAME: " << configData["DB_NAME"] << std::endl;
+
+
     int port = 5000;
 
     io_service service;

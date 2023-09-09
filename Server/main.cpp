@@ -7,10 +7,10 @@ using namespace boost::asio;
 
 
 int main() {
-    int port = 5000 ;
-    
+    int port = 5000;
+
     io_service service;
-    ip::tcp::endpoint endpoint(ip::tcp::v4(), port); 
+    ip::tcp::endpoint endpoint(ip::tcp::v4(), port);
     ip::tcp::acceptor acceptor(service, endpoint);
 
     cout << "Server is running on port 5000." << endl;

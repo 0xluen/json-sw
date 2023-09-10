@@ -3,4 +3,4 @@
   - add -D_WIN32_WINNT=0x0601 to the compiler command line; or
   - add _WIN32_WINNT=0x0601 to your project's Preprocessor Definitions.
   Assuming _WIN32_WINNT=0x0601 (i.e. Windows 7 target).
-  Server.vcxproj -> C:\Users\rootx\OneDrive\Belgeler\GitHub\register-server\x64\Debug\Server.exe
+LINK : fatal error LNK1168: C:\Users\rootx\OneDrive\Belgeler\GitHub\register-server\x64\Debug\Server.exe yazma için açılamıyor
